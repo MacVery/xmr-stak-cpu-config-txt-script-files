@@ -25,11 +25,13 @@ if [ ! -d $DIRECTORY ]; then
     cd bin
     mv config.txt config.txt.og
     git clone https://github.com/YanBellavance/xmr-stak-cpu-config-txt-script-files.git
+    cd xmr-stak-cpu-config-txt-script-files
     CONFIG_TXT_INPUT="configPyTemplate.txt"
     CONFIG_TXT_OUTPUT="../config.txt"
     NUM_CORES=$(getconf _NPROCESSORS_ONLN)
     USER_ID="alpha_$(curl ipinfo.io/ip | tr "." "_")"
-    ./setupConfig.py -i $CONFIG_TXT_INPUT -o $CONFIG_TXT_OUTPUT  -c $NUM_CORES -u $USER_ID
+    python ./setupConfig.py -i $CONFIG_TXT_INPUT -o $CONFIG_TXT_OUTPUT  -c $NUM_CORES -u $USER_ID
+    cd ..
     # launch 
     ./xmr-stak-cpu
     # manual check of hash rate (many cores sometimes dont launch right and give like 0H/s)

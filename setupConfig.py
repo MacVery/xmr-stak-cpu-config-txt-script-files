@@ -43,7 +43,7 @@ def main(argv):
         if re.search("@TOKEN_CORE",line):
           for core in range(0,numcores):
             core_line = line.replace("@TOKEN_CORE", str(core))
-            if core % numcores:
+            if (core % 4):
               new_file.write(core_line)
             else:
               new_file.write("/*" + core_line.replace("}," , "},*/"))
