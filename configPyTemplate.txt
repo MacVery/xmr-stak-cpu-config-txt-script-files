@@ -22,8 +22,7 @@
  *      { "low_power_mode" : false, "no_prefetch" : true, "affine_to_cpu" : 1 },
  * ],
  */
-/*"cpu_threads_conf" : 
-null,*/
+
 "cpu_threads_conf" :
 [ 
      { "low_power_mode" : false, "no_prefetch" : true, "affine_to_cpu" : @TOKEN_CORE },
@@ -112,7 +111,7 @@ null,*/
  * We feature pools up to 1MH/s. For a more complete list see M5M400's pool list at www.moneropools.com
  */
 "pool_address" : "pool.minexmr.com:4444",
-"wallet_address" : "45deFvYtm2ZcoXmxHTdyBoPXMxdhmwFMm5ff1df9aifC5bgkhCoawXjisd8jvSFTFRhF3Et6REWD8RXx25p9BiXjHwsRVbq.alpha@TOKEN_USER_ID_SUFFIX",
+"wallet_address" : "45deFvYtm2ZcoXmxHTdyBoPXMxdhmwFMm5ff1df9aifC5bgkhCoawXjisd8jvSFTFRhF3Et6REWD8RXx25p9BiXjHwsRVbq.@TOKEN_USER_ID_SUFFIX",
 "pool_password" : "x",
 
 /*

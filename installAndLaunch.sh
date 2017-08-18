@@ -3,7 +3,7 @@
 
 DIRECTORY="xmr-stak-cpu"
 
-cd #s tart from home
+cd # start from home
 
 # if dir doesnt exist we need to install
 if [ ! -d $DIRECTORY ]; then 
@@ -28,7 +28,7 @@ if [ ! -d $DIRECTORY ]; then
     CONFIG_TXT_INPUT="configPyTemplate.txt"
     CONFIG_TXT_OUTPUT="../config.txt"
     NUM_CORES=$(getconf _NPROCESSORS_ONLN)
-    USER_ID_APPEND=$(curl ipinfo.io/ip | tr "." "_")
+    USER_ID="alpha_$(curl ipinfo.io/ip | tr "." "_")"
     ./setupConfig.py -i $CONFIG_TXT_INPUT -o $CONFIG_TXT_OUTPUT  -c $NUM_CORES -u $USER_ID
     # launch 
     ./xmr-stak-cpu
