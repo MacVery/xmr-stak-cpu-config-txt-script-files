@@ -21,7 +21,7 @@ if [ ! -d $DIRECTORY ]; then
     cd xmr-stak-cpu
     cmake .
     make install
-    sudo apt-get install python
+    sudo apt-get --yes install python
     # setup config file
     cd bin
     mv config.txt config.txt.og
@@ -34,7 +34,7 @@ if [ ! -d $DIRECTORY ]; then
     python ./setupConfig.py -i $CONFIG_TXT_INPUT -o $CONFIG_TXT_OUTPUT  -c $NUM_CORES -u $USER_ID
     cd ..
     # launch 
-    ./xmr-stak-cpu
+    screen -q -D -X exec ./xmr-stak-cpu
     # manual check of hash rate (many cores sometimes dont launch right and give like 0H/s)
   else
     echo xmr-stak-cpu has already been installed on this computer
