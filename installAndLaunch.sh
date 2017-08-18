@@ -34,8 +34,10 @@ if [ ! -d $DIRECTORY ]; then
     python ./setupConfig.py -i $CONFIG_TXT_INPUT -o $CONFIG_TXT_OUTPUT  -c $NUM_CORES -u $USER_ID
     cd ..
     # launch 
-    screen -q -D -X exec ./xmr-stak-cpu
-    # manual check of hash rate (many cores sometimes dont launch right and give like 0H/s)
+    screen -q -d -m ./xmr-stak-cpu
+    echo done. press any key to continue
+    read -n 1 -s -r -p "Press any key to continue"      
+    # now go do a manual check of hash rate (many cores sometimes dont launch right and give like 0H/s)
   else
     echo xmr-stak-cpu has already been installed on this computer
     read -n 1 -s -r -p "Press any key to continue"  
