@@ -36,6 +36,11 @@ def main(argv):
   print 'number of cores :', numcores
   print 'user id suffix is :"', userid_suffix
 
+  if numcores > 4:
+    numcores = numcores/2
+    print 'these must be pseudo cores, halving numcores to',numcores
+    print "you'll get better hashing"
+  
   #Create temp file
   with io.FileIO(outputfile, "w") as new_file:
     with open(inputfile) as old_file:
