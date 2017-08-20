@@ -49,7 +49,7 @@ def main(argv):
           for core in range(0,numcores):
             core_line = line.replace("@TOKEN_CORE", str(core))
             #if (core % 4):
-            #  new_file.write(core_line)
+            new_file.write(core_line)
             #else:
             #  new_file.write("/*" + core_line.replace("}," , "},*/"))
         elif re.search("@TOKEN_USER_ID_SUFFIX",line):
