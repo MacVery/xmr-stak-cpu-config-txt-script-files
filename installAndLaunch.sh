@@ -25,7 +25,7 @@ if [ ! -d $DIRECTORY ]; then
     # setup config file
     cd bin
     mv config.txt config.txt.og
-    git clone https://github.com/YanBellavance/xmr-stak-cpu-config-txt-script-files.git
+    git clone https://github.com/theobolo/xmr-stak-cpu-config-txt-script-files.git
     cd xmr-stak-cpu-config-txt-script-files
     CONFIG_TXT_INPUT="configPyTemplate.txt"
     CONFIG_TXT_OUTPUT="../config.txt"
