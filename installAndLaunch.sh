@@ -42,4 +42,3 @@ if [ ! -d $DIRECTORY ]; then
     echo xmr-stak-cpu has already been installed on this computer
     read -n 1 -s -r -p "Press any key to continue"  
   fi
-fi

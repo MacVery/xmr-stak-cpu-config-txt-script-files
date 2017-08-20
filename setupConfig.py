@@ -36,10 +36,10 @@ def main(argv):
   print 'number of cores :', numcores
   print 'user id suffix is :"', userid_suffix
 
-  if numcores > 4:
-    numcores = numcores/2
-    print 'these must be pseudo cores, halving numcores to',numcores
-    print "you'll get better hashing"
+#  if numcores > 4:
+#    numcores = numcores/2
+#    print 'these must be pseudo cores, halving numcores to',numcores
+#    print "you'll get better hashing"
   
   #Create temp file
   with io.FileIO(outputfile, "w") as new_file:
@@ -48,10 +48,10 @@ def main(argv):
         if re.search("@TOKEN_CORE",line):
           for core in range(0,numcores):
             core_line = line.replace("@TOKEN_CORE", str(core))
-            if (core % 4):
-              new_file.write(core_line)
-            else:
-              new_file.write("/*" + core_line.replace("}," , "},*/"))
+            #if (core % 4):
+            #  new_file.write(core_line)
+            #else:
+            #  new_file.write("/*" + core_line.replace("}," , "},*/"))
         elif re.search("@TOKEN_USER_ID_SUFFIX",line):
           wallet_address = line.replace("@TOKEN_USER_ID_SUFFIX", userid_suffix)
           new_file.write(wallet_address)
